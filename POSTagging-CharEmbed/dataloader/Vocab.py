@@ -122,15 +122,15 @@ class POSVocab(object):
 
 	def pos2index(self, pos):
 		if isinstance(pos, list):
-			return [self._pos2idx[p] for p in pos]
+			return [self._pos2idx.get(p, -1) for p in pos]
 		else:
-			return self._pos2idx[pos]
+			return self._pos2idx.get(pos, -1)
 
 	def index2pos(self, idxs):
 		if isinstance(idxs, list):
-			return [self._idx2pos[i] for i in idxs]
+			return [self._idx2pos.get(i, 'un') for i in idxs]
 		else:
-			return self._idx2pos[idxs]
+			return self._idx2pos.get(idxs, 'un')
 
 	def save(self, save_vocab_path):
 		with open(save_vocab_path, 'wb') as fw:

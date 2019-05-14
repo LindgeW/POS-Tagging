@@ -80,26 +80,26 @@ def create_vocabs(corpus_path):
 	return CharVocab(char_set), POSVocab(words_set, pos_set)
 
 
-def batch_variable(batch_data, vocab):
-	batch_size = len(batch_data)
-	max_len = max([len(inst.words) for inst in batch_data])
-
-	wds_idxs = torch.zeros(batch_size, max_len, dtype=torch.long)
-	pos_idxs = torch.zeros(batch_size, max_len, dtype=torch.long).fill_(-1)
-	seq_lens = []
-	for i, inst in enumerate(batch_data):
-		seq_len = len(inst.words)
-		seq_lens.append(seq_len)
-		wds_idxs[i, :seq_len] = torch.LongTensor(vocab.word2index(inst.words))
-		pos_idxs[i, :seq_len] = torch.LongTensor(vocab.pos2index(inst.pos))
-
-	sorted_seq_lens, indices = torch.sort(torch.tensor(seq_lens), descending=True)
-	_, unsorted_indices = torch.sort(indices)  # 排序前的顺序
-	wds_idxs = torch.index_select(wds_idxs, dim=0, index=indices)
-	pos_idxs = torch.index_select(pos_idxs, dim=0, index=indices)
-	pos_idxs = pos_idxs.flatten()  # 展平成一维
-
-	return wds_idxs, pos_idxs, sorted_seq_lens, unsorted_indices
+# def batch_variable(batch_data, vocab):
+# 	batch_size = len(batch_data)
+# 	max_len = max([len(inst.words) for inst in batch_data])
+#
+# 	wds_idxs = torch.zeros(batch_size, max_len, dtype=torch.long)
+# 	pos_idxs = torch.zeros(batch_size, max_len, dtype=torch.long).fill_(-1)
+# 	seq_lens = []
+# 	for i, inst in enumerate(batch_data):
+# 		seq_len = len(inst.words)
+# 		seq_lens.append(seq_len)
+# 		wds_idxs[i, :seq_len] = torch.LongTensor(vocab.word2index(inst.words))
+# 		pos_idxs[i, :seq_len] = torch.LongTensor(vocab.pos2index(inst.pos))
+#
+# 	sorted_seq_lens, indices = torch.sort(torch.tensor(seq_lens), descending=True)
+# 	_, unsorted_indices = torch.sort(indices)  # 排序前的顺序
+# 	wds_idxs = torch.index_select(wds_idxs, dim=0, index=indices)
+# 	pos_idxs = torch.index_select(pos_idxs, dim=0, index=indices)
+# 	pos_idxs = pos_idxs.flatten()  # 展平成一维
+#
+# 	return wds_idxs, pos_idxs, sorted_seq_lens, unsorted_indices
 
 
 # def batch_variable_mask(batch_data, vocab):
@@ -138,9 +138,32 @@ def batch_variable(batch_data, vocab):
 # 	return wds_idxs, pos_idxs, seq_lens
 
 
+def pred_data_variable(insts, vocab, char_vocab):
+	batch_size = len(insts)
+	max_seq_len, max_wd_len = 0, 0
+	for inst in insts:
+		if len(inst.words) > max_seq_len:
+			max_seq_len = len(inst.words)
+		for wd in inst.words:
+			if len(wd) > max_wd_len:
+				max_wd_len = len(wd)
+
+	wds_idxs = torch.zeros(batch_size, max_seq_len, dtype=torch.long)
+	char_idxs = torch.zeros((batch_size, max_seq_len, max_wd_len), dtype=torch.long)
+	seq_lens = torch.zeros(batch_size, )
+
+	for i, inst in enumerate(insts):
+		seq_len = len(inst.words)
+		seq_lens[i] = seq_len
+		for j, wd in enumerate(inst.words):
+			char_idxs[i, j, :len(wd)] = torch.tensor(char_vocab.char2idx(wd), dtype=torch.long)
+		wds_idxs[i, :seq_len] = torch.tensor(vocab.word2index(inst.words), dtype=torch.long)
+
+	return wds_idxs, char_idxs, seq_lens
+
+
 def batch_variable_mask_easy(batch_data, vocab, char_vocab):
 	batch_size = len(batch_data)
-
 	max_seq_len, max_wd_len = 0, 0
 	for inst in batch_data:
 		if len(inst.words) > max_seq_len:
@@ -148,8 +171,6 @@ def batch_variable_mask_easy(batch_data, vocab, char_vocab):
 		for wd in inst.words:
 			if len(wd) > max_wd_len:
 				max_wd_len = len(wd)
-
-	# max_wd_len = min(max_wd_len, 6)
 
 	wds_idxs = torch.zeros(batch_size, max_seq_len, dtype=torch.long)
 	char_idxs = torch.zeros((batch_size, max_seq_len, max_wd_len), dtype=torch.long)
