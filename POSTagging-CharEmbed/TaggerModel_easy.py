@@ -54,7 +54,7 @@ class POSTagger(nn.Module):
 		self.bidirectional = True
 		self.wd_embedding_size = wd_embedding_weights.shape[1]
 		self.wd_embedding = nn.Embedding.from_pretrained(torch.from_numpy(wd_embedding_weights))
-		self.wd_embedding.weight.requires_grad = True
+		self.wd_embedding.weight.requires_grad = False
 
 		self.rnn_encoder = RNNEncoder(
 			input_size=self.wd_embedding_size + self.config.char_hidden_size,
@@ -70,8 +70,9 @@ class POSTagger(nn.Module):
 			char_embedding_weights=char_embedding_weights
 		)
 
-		self.hidden2pos = nn.Linear(config.hidden_size, vocab.pos_size)
-		# self.hidden2pos = nn.Linear(num_directions * config.hidden_size, vocab.pos_size)
+		num_directions = 2 if self.bidirectional else 1
+		# self.hidden2pos = nn.Linear(config.hidden_size, vocab.pos_size)
+		self.hidden2pos = nn.Linear(num_directions * config.hidden_size, vocab.pos_size)
 		self.embed_dropout = nn.Dropout(config.drop_embed_rate)
 		self.linear_dropout = nn.Dropout(config.drop_rate)
 
@@ -88,8 +89,8 @@ class POSTagger(nn.Module):
 
 		rnn_out, hidden = self.rnn_encoder(embed, seq_lens)  # (batch_size, seq_len, hidden_size)
 
-		if self.bidirectional:
-			rnn_out = rnn_out[:, :, :self.config.hidden_size] + rnn_out[:, :, self.config.hidden_size:]
+		# if self.bidirectional:
+		# 	rnn_out = rnn_out[:, :, :self.config.hidden_size] + rnn_out[:, :, self.config.hidden_size:]
 
 		if self.training:
 			rnn_out = self.linear_dropout(rnn_out)

@@ -69,17 +69,17 @@ def evaluate(test_data, tagger, vocab, char_vocab, config):
 
 def train(train_data, test_data, dev_data, vocab, config, wd_embed_weights, char_embed_weights):
     tagger = POSTagger(vocab, config, wd_embed_weights, char_embed_weights)
-    optimizer = optim.Adam(tagger.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
-    # optimizer = optim.Adam(filter(lambda p: p.requires_grad, tagger.parameters()), lr=config.learning_rate, weight_decay=config.weight_decay)
+    # optimizer = optim.Adam(tagger.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
+    optimizer = optim.Adam(filter(lambda p: p.requires_grad, tagger.parameters()), lr=config.learning_rate, weight_decay=config.weight_decay)
 
     if config.use_cuda:
         tagger = tagger.cuda()
     # print('model:', next(tagger.parameters()).is_cuda)
 
-    tagger.train()
     total_acc, total_loss = [], []
     val_total_acc, val_total_loss = [], []
     for ep in range(config.epochs):
+        tagger.train()
         print(' -- Epoch %d' % (ep+1))
         epoch_acc, epoch_loss = 0, 0
         nb_total = 0
