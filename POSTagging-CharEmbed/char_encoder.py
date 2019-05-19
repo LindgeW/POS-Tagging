@@ -14,7 +14,7 @@ class CharEncoder(nn.Module):
                                            embedding_dim=self.char_embedding_size)
         nn.init.uniform_(self.char_embedding.parameters(), -0.32, 0.32)
         # self.char_embedding.weight.data.copy_(xx)
-        # nn.init.uniform_(self.char_embedding.weight.data, -0.32, 0.32)
+        # nn.init.uniform_(self.char_embedding.weight, -0.32, 0.32)
         # nn.init.uniform_(self.char_embedding.bias, 0, 0)
 
         self.win_sizes = [2, 3, 4]
