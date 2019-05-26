@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41ec7a84-84f7-463a-b2b4-fe1452f52561" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POSTagging-CharEmbed-CRF/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../POSTagging-CharEmbed-CRF/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/char_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/char_encoder.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TaggerModel_easy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1193">
+            <state relative-caret-position="-437">
               <caret line="59" column="77" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -109,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/char_encoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="-648">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
         </entry>
@@ -191,10 +191,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="62" />
-    <option name="y" value="127" />
-    <option name="width" value="1888" />
-    <option name="height" value="1072" />
+    <option name="x" value="-64" />
+    <option name="y" value="85" />
+    <option name="width" value="1890" />
+    <option name="height" value="1074" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -417,6 +417,7 @@
       <workItem from="1558078360020" duration="616000" />
       <workItem from="1558143304967" duration="1198000" />
       <workItem from="1558232952545" duration="630000" />
+      <workItem from="1558840676749" duration="232000" />
     </task>
     <servers />
   </component>
@@ -453,7 +454,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130361000" />
+    <option name="totallyTimeSpent" value="130593000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -468,7 +469,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4952199" visible="true" weight="0.13562752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4952199" visible="true" weight="0.13765182" />
       <window_info id="Structure" order="1" sideWeight="0.50577366" side_tool="true" weight="0.12550607" />
       <window_info id="Favorites" order="2" sideWeight="0.50574714" side_tool="true" weight="0.12550607" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -482,7 +483,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.11066127" side_tool="true" weight="0.6087591" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.891363" visible="true" weight="0.055474453" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.891363" visible="true" weight="0.055474453" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49730095" weight="0.36377025" />
       <window_info anchor="bottom" id="File Transfer" order="13" weight="0.53722626" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -645,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/char_encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -661,11 +655,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TaggerModel_easy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1193">
+        <state relative-caret-position="-437">
           <caret line="59" column="77" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/char_encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>

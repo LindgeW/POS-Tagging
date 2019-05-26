@@ -47,7 +47,7 @@ class CharEncoder(nn.Module):
         self.dropout_embed = nn.Dropout(config.drop_embed_rate)
 
     def conv_and_pool(self, x, conv):
-        conv_out = conv(F.relu(x))
+        conv_out = F.relu(conv(x))
         out = F.max_pool1d(conv_out, conv_out.size(2))
         return out
 
