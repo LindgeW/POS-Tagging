@@ -38,7 +38,9 @@ class CharEncoder(nn.Module):
         #             kernel_size=w
         #         ),
         #         nn.ReLU(),
-        #         nn.MaxPool1d(kernel_size=max_len + 2*self.padding - w + 1)
+        ##         nn.MaxPool1d(kernel_size=max_len + 2*self.padding - w + 1)
+        #自适应池化Adaptive Pooling与标准的Max/AvgPooling区别在于，自适应池化Adaptive Pooling会根据输入的参数来控制输出output_size，而标准的Max/AvgPooling是通过kernel_size，stride与padding来计算output_size
+        #          nn.AdaptiveMaxPool1d(output_size=1) 
         #     ) for w in self.win_sizes
         # ])
 
