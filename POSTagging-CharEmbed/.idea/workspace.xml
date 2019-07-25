@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="41ec7a84-84f7-463a-b2b4-fe1452f52561" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../POSTagging-CharEmbed-CRF/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../POSTagging-CharEmbed-CRF/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/char_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/char_encoder.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +111,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/char_encoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-648">
+            <state relative-caret-position="391">
               <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
@@ -190,7 +189,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-64" />
     <option name="y" value="85" />
     <option name="width" value="1890" />
@@ -417,7 +416,7 @@
       <workItem from="1558078360020" duration="616000" />
       <workItem from="1558143304967" duration="1198000" />
       <workItem from="1558232952545" duration="630000" />
-      <workItem from="1558840676749" duration="232000" />
+      <workItem from="1558840676749" duration="786000" />
     </task>
     <servers />
   </component>
@@ -454,7 +453,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130593000" />
+    <option name="totallyTimeSpent" value="131147000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -466,7 +465,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4952199" visible="true" weight="0.13765182" />
@@ -665,7 +664,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/char_encoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
+        <state relative-caret-position="391">
           <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
