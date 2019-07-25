@@ -1,11 +1,11 @@
-POSTagging/.idea/*
-POSTagging/__pycache__/*
-POSTagging/corpus/*
+POSTagging/.idea/
+POSTagging/__pycache__/
+POSTagging/corpus/
 
-POSTagging-CharEmbed/.idea/*
-POSTagging-CharEmbed/__pycache__/*
-POSTagging-CharEmbed/corpus/*
+POSTagging-CharEmbed/.idea/
+POSTagging-CharEmbed/__pycache__/
+POSTagging-CharEmbed/corpus/
 
-POSTagging-CharEmbed-CRF/.idea/*
-POSTagging-CharEmbed-CRF/__pycache__/*
-POSTagging-CharEmbed-CRF/corpus/*
+POSTagging-CharEmbed-CRF/.idea/
+POSTagging-CharEmbed-CRF/__pycache__/
+POSTagging-CharEmbed-CRF/corpus/
